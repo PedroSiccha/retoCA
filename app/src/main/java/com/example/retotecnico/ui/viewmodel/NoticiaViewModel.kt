@@ -15,7 +15,6 @@ class NoticiaViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
 
     var getNoticiasUseCase = getNoticiasUseCase()
-    var getRandomNoticiasUseCase = getRandomNoticiasUseCase()
 
     fun onCreate(){
         viewModelScope.launch {
@@ -26,16 +25,6 @@ class NoticiaViewModel : ViewModel() {
             isLoading.postValue(false)
 
         }
-    }
-
-    fun randomNoticia(){
-        isLoading.postValue(true)
-        val noticias = getRandomNoticiasUseCase()
-
-        if(noticias!=null){
-            noticiaModel.postValue(noticias)
-        }
-        isLoading.postValue(false)
     }
 
 }

@@ -6,4 +6,9 @@ object Constantes {
 
     const val LOGOUT_FROM_ALL_DEVICE = "LOGOUT_FROM_ALL_DEVICE"
 
+    const val AUTOR = "AUTOR"
+    const val FECHA = "FECHA"
+    const val TITULO = "TITULO"
+    const val DESCRIPCION = "DESCRIPCION"
+
 }

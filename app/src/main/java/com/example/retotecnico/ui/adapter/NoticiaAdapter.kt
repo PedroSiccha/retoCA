@@ -56,7 +56,7 @@ class NoticiaAdapter(private val context: Context, private val onNoticiasItemCli
         holder.itemView.tvFecha.setText(item.created_at)
 
 
-        holder.itemView.setOnClickListener { onNoticiasItemClicked.onItemClick(position, noticias) }
+        holder.itemView.setOnClickListener { onNoticiasItemClicked.onItemClick(noticias[position]) }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -100,7 +100,7 @@ class NoticiaAdapter(private val context: Context, private val onNoticiasItemCli
     class NoticiasViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     interface OnNoticiasItemClicked {
-        fun onItemClick(position: Int, noticias: MutableList<NoticiasModel>)
+        fun onItemClick(noticias: NoticiasModel)
     }
 
 
