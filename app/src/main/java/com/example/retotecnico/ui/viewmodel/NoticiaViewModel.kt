@@ -7,14 +7,17 @@ import com.example.retotecnico.domains.*
 import com.example.retotecnico.data.model.HitsModel
 import com.example.retotecnico.data.model.NoticiasModel
 import com.example.retotecnico.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-class NoticiaViewModel : ViewModel() {
+@HiltViewModel
+class NoticiaViewModel @Inject constructor(
+    private val getNoticiasUseCase: getNoticiasUseCase
+)  : ViewModel() {
 
     val noticiaModel = MutableLiveData<HitsModel?>()
     val isLoading = MutableLiveData<Boolean>()
-
-    var getNoticiasUseCase = getNoticiasUseCase()
 
     fun onCreate(){
         viewModelScope.launch {

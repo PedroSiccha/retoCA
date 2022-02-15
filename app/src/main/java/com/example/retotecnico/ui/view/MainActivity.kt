@@ -17,8 +17,9 @@ import com.example.retotecnico.databinding.ActivityMainBinding
 import com.example.retotecnico.ui.adapter.NoticiaAdapter
 import com.example.retotecnico.ui.viewmodel.NoticiaViewModel
 import com.example.retotecnico.util.Constantes
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NoticiaAdapter.OnNoticiasItemClicked {
 
     private lateinit var binding:ActivityMainBinding

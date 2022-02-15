@@ -6,7 +6,9 @@ import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
 import com.example.retotecnico.databinding.ActivityDescripcionNoticiaBinding
 import com.example.retotecnico.util.Constantes
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DescripcionNoticiaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDescripcionNoticiaBinding
@@ -43,4 +45,10 @@ class DescripcionNoticiaActivity : AppCompatActivity() {
 
         isLoading.postValue(false)
     }
+
+    override fun onStop() {
+        super.onStop()
+        //onDestroy()
+    }
+
 }

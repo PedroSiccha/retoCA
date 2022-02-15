@@ -5,13 +5,13 @@ import com.example.retotecnico.data.model.HitsModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
+import javax.inject.Inject
 
-class NoticiaService {
-    private val retrofit = RetrofitHelper.getRetrofit()
+class NoticiaService @Inject constructor(private val api: NoticiaApiClient) {
 
     suspend fun getNoticias(): HitsModel {
         return withContext(Dispatchers.IO){
-            val response = retrofit.create(NoticiaApiClient::class.java).getNoticias()
+            val response = api.getNoticias()
             response.body()!!
         }
     }
